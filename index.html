@@ -88,9 +88,9 @@
 		// iframeの大きさや表示位置をセット
 		CommentField.style.position = "absolute";
 		CommentField.style.top = 80;
-		CommentField.style.left = 360;
-		CommentField.style.width = 400;
-		CommentField.style.height = 270;
+		CommentField.style.left = 330;
+		CommentField.style.width = 420;
+		CommentField.style.height = 400;
 	//---------コメントスクロールエリア------
 	//---------質問テキストボックス----
 		//テキストエリアの生成
@@ -150,7 +150,7 @@
 		//質問か答えかを判別して表示位置と色を変更する（0は質問、1は答え）
 		if(Mode == 0){
 			Text.style.backgroundColor = "#99FF33";
-			Text.style.left = 50;
+			Text.style.left = 100;
 		}
 		else{
 			Text.style.backgroundColor = "#FFFFFF";
@@ -180,7 +180,7 @@
 		//Divにテキストエリアを組み込む
 		CommentField.contentDocument.body.appendChild(Text);
 		//テキストエリアの高さを調整
-		Text.style.height = parseInt(Text.scrollHeight) + 5;
+		Text.style.height = parseInt(Text.scrollHeight) + 50;
 		//スクロール位置を変更する
 		CommentScrollTop = CommentScrollTop + parseInt(Text.style.height) + 10;
 		CommentField.contentDocument.body.scrollTop = CommentScrollTop;
