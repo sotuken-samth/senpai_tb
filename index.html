@@ -147,7 +147,7 @@
 		Text.style.position = "absolute";
 		Text.style.top = CommentScrollTop;
 		Text.style.width = 250;
-　　　　　　　　　Text.style.height = 50;
+　　　　　　　　　Text.style.height = 40;
 		//質問か答えかを判別して表示位置と色を変更する（0は質問、1は答え）
 		if(Mode == 0){
 			Text.style.backgroundColor = "#99FF33";
@@ -181,7 +181,7 @@
 		//Divにテキストエリアを組み込む
 		CommentField.contentDocument.body.appendChild(Text);
 		//テキストエリアの高さを調整
-		Text.style.height = parseInt(Text.scrollHeight) + 50;
+		Text.style.height = parseInt(Text.scrollHeight) + 20;
 		//スクロール位置を変更する
 		CommentScrollTop = CommentScrollTop + parseInt(Text.style.height) + 10;
 		CommentField.contentDocument.body.scrollTop = CommentScrollTop;
