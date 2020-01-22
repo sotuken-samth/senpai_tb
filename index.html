@@ -181,18 +181,18 @@
 			PopUpField.Div.removeChild(ImgNormal) 
 			var random = Math.floor( Math.random() * 5 );
 			if(random == 0){
-				PopUpField.Div.appendChild(ImgTalkS);	
+				PopUpField.Div.appendChild(ImgTalk);	
 				
 			}else{
-				PopUpField.Div.appendChild(ImgTalk);			
+				PopUpField.Div.appendChild(ImgTalkS);			
 			}
 			//数秒後に画像をもとに戻す
 			setTimeout(function(){
 				if(random == 0){
-					PopUpField.Div.removeChild(ImgTalkS);	
+					PopUpField.Div.removeChild(ImgTalk);	
 				
 				}else{
-					PopUpField.Div.removeChild(ImgTalk);			
+					PopUpField.Div.removeChild(ImgTalkS);			
 				}
 				PopUpField.Div.appendChild(ImgNormal);
 			},2000);
