@@ -20,7 +20,26 @@
 	//しゃべるえがおキャラクタ画像参照変数
 	var ImgTalkS;
 	
-	
+	var result = null;
+	var data = null;
+	var cityId = "440010";
+	var httpObj = new XMLHttpRequest();
+	httpObj.open("GET", "https://torisky.com/libs/getLWWS.php?city=" + cityId, true);
+
+	httpObj.onload = function(){
+    data = JSON.parse(this.responseText);
+	var day = 0;
+	showWeather(data,day);
+	}
+	httpObj.send(null);
+
+	function showWeather(data,day){
+		var tag = "";
+		var day = 0;
+		// 天気アイコン画像＋天気の文字（例：晴れ）
+		tag += data.forecasts[day].telop;
+		return tag;
+	}
 
 	//コメントフィールド参照変数
 	var CommentField;
@@ -549,17 +568,34 @@ if(InputText.match("こんにち")){
 	　var Question = new CommentCls(1,"嫌いじゃないわ");
 	　},800);
 
-}else　if(InputText.match("今日の天気.*[?|？]")){
-
- setTimeout(function(){
-		//回答の出力
-	　var Question = new CommentCls(1,"外に出てみたら");
-	　},800);
 
 }else　if(InputText.match("疲れた")){
 
  setTimeout(function(){
+		//回答の出力}else　if(InputText.match("今日の天気.*[?|？]")){
+
+ setTimeout(function(){
 		//回答の出力
+		day = 0;
+		var Question = new CommentCls(1,"今日の大分は" + showWeather(data,day) + "");
+	　},800);
+
+}else　if(InputText.match("明日の天気.*[?|？]")){
+ 
+ setTimeout(function(){
+		//回答の出力
+		day = 1;
+		var Question = new CommentCls(1,"明日の大分は" + showWeather(data,day) + "");
+	 },800);
+
+}else　if(InputText.match("明後日の天気.*[?|？]")){
+ 
+ setTimeout(function(){
+		//回答の出力
+		day = 2;
+		var Question = new CommentCls(1,"明後日の大分は" + showWeather(data,day) + "");
+	 },800);
+
 	　var Question = new CommentCls(1,"眠ることを推奨するわ");
 	　},800);
 
