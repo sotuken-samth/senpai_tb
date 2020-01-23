@@ -28,7 +28,6 @@
 
 	httpObj.onload = function(){
     data = JSON.parse(this.responseText);
-	var day = 0;
 	showWeather(data,day);
 	}
 	httpObj.send(null);
